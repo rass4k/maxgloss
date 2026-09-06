@@ -941,10 +941,11 @@ ${detalle.trim()}
                                                     type="button"
                                                     onClick={() => setModalidad("domicilio")}
                                                     aria-pressed={modalidad === "domicilio"}
-                                                    className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${modalidad === "domicilio"
+                                                    className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${
+                                                        modalidad === "domicilio"
                                                             ? "border-[#ff2632] bg-[#d71920]/12 text-white"
                                                             : "border-white/10 bg-white/[0.025] text-zinc-500"
-                                                        }`}
+                                                    }`}
                                                 >
                                                     A domicilio
                                                 </button>
@@ -953,10 +954,11 @@ ${detalle.trim()}
                                                     type="button"
                                                     onClick={() => setModalidad("coordinar")}
                                                     aria-pressed={modalidad === "coordinar"}
-                                                    className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${modalidad === "coordinar"
+                                                    className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${
+                                                        modalidad === "coordinar"
                                                             ? "border-[#ff2632] bg-[#d71920]/12 text-white"
                                                             : "border-white/10 bg-white/[0.025] text-zinc-500"
-                                                        }`}
+                                                    }`}
                                                 >
                                                     Coordinar
                                                 </button>
@@ -965,8 +967,9 @@ ${detalle.trim()}
 
                                         {/* UBICACIÓN */}
                                         <div
-                                            className={`mt-4 grid gap-3 ${modalidad === "domicilio" ? "sm:grid-cols-2" : ""
-                                                }`}
+                                            className={`mt-4 grid gap-3 ${
+                                                modalidad === "domicilio" ? "sm:grid-cols-2" : ""
+                                            }`}
                                         >
                                             <div>
                                                 <label
