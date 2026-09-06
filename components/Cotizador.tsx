@@ -306,7 +306,7 @@ function VehicleHeroCarousel({
 
     return (
         <div
-            className="relative mt-3 min-h-[330px] overflow-hidden sm:mt-5 sm:min-h-[470px] sm:overflow-visible xl:mt-6 xl:min-h-[540px]"
+            className="relative mt-3 min-h-[365px] overflow-hidden sm:mt-5 sm:min-h-[470px] sm:overflow-visible xl:mt-6 xl:min-h-[540px]"
             onMouseEnter={() => setPausado(true)}
             onMouseLeave={() => setPausado(false)}
         >
@@ -322,7 +322,7 @@ function VehicleHeroCarousel({
                 type="button"
                 onClick={anterior}
                 aria-label={`Ver ${previo.label}`}
-                className="group absolute left-[-24%] top-[45%] z-[2] block h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:left-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:left-[-10%] lg:h-[210px] lg:w-[290px] xl:left-[-12%]"
+                className="group absolute left-[-24%] top-[45%] z-[2] hidden h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:block sm:left-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:left-[-10%] lg:h-[210px] lg:w-[290px] xl:left-[-12%]"
             >
                 <img
                     src={previo.src}
@@ -337,7 +337,7 @@ function VehicleHeroCarousel({
                 type="button"
                 onClick={siguiente}
                 aria-label={`Ver ${siguienteVista.label}`}
-                className="group absolute right-[-24%] top-[45%] z-[2] block h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:right-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:right-[-11%] lg:h-[210px] lg:w-[290px] xl:right-[-13%]"
+                className="group absolute right-[-24%] top-[45%] z-[2] hidden h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:block sm:right-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:right-[-11%] lg:h-[210px] lg:w-[290px] xl:right-[-13%]"
             >
                 <img
                     src={siguienteVista.src}
@@ -348,12 +348,13 @@ function VehicleHeroCarousel({
                 />
             </button>
 
-            <div className="absolute inset-x-[4%] top-[42%] z-10 -translate-y-1/2 sm:inset-x-[6%] sm:top-[45%] xl:inset-x-[1%]">
+            {/* Imagen principal: en móvil usa una zona flexible para evitar recortes */}
+            <div className="absolute inset-x-3 top-2 bottom-[92px] z-10 flex items-center justify-center sm:inset-x-[6%] sm:top-[45%] sm:bottom-auto sm:-translate-y-1/2 xl:inset-x-[1%]">
                 <img
                     key={actual.src}
                     src={actual.src}
                     alt={actual.alt}
-                    className="hero-car-fade mx-auto h-[235px] w-full max-w-[440px] object-contain drop-shadow-[0_0_24px_rgba(255,255,255,0.10)] min-[390px]:h-[250px] sm:h-[370px] sm:max-w-[760px] xl:h-[430px]"
+                    className="hero-car-fade max-h-[220px] w-full object-contain drop-shadow-[0_0_24px_rgba(255,255,255,0.10)] min-[390px]:max-h-[240px] sm:h-[370px] sm:max-h-none sm:max-w-[760px] xl:h-[430px]"
                     style={{ filter: "brightness(0) invert(1)" }}
                     draggable={false}
                 />
