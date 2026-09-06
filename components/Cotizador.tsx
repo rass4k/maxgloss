@@ -86,7 +86,7 @@ const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
             label: "Trasero derecho",
         },
         {
-            src: "/hatchback/hatchback_trasero_izquierdo.png",
+            src: "/hatchback/hatchback_trasero izquierdo.png",
             alt: "Hatchback vista trasera izquierda",
             label: "Trasero izquierdo",
         },
@@ -104,7 +104,7 @@ const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
             label: "Frontal derecho",
         },
         {
-            src: "/sedan/frente_lateral_izquierdo.png",
+            src: "/sedan/frente_lateral_izquuierdo.png",
             alt: "Sedán vista frontal izquierda",
             label: "Frontal izquierdo",
         },
@@ -170,12 +170,7 @@ const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
             label: "Atrás",
         },
         {
-            src: "/camioneta/trasero_derecho.png",
-            alt: "Camioneta vista trasera derecha",
-            label: "Trasero derecho",
-        },
-        {
-            src: "/camioneta/trasero_izquierdo.png",
+            src: "/camioneta/trasero izquierdo.png",
             alt: "Camioneta vista trasera izquierda",
             label: "Trasero izquierdo",
         },
@@ -620,70 +615,6 @@ ${detalle.trim()}
 
                         <VehicleHeroCarousel vehiculo={vehiculo} vistas={vistas} />
 
-                        <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:gap-4">
-                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
-                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                                    <ShieldCheck
-                                        size={20}
-                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
-                                    />
-                                    <div>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            Resultados
-                                        </p>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            profesionales
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
-                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                                    <Clock3
-                                        size={20}
-                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
-                                    />
-                                    <div>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            Atención
-                                        </p>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            por WhatsApp
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
-                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
-                                    <Sparkles
-                                        size={20}
-                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
-                                    />
-                                    <div>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            Tu auto en
-                                        </p>
-                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
-                                            manos expertas
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-8 flex items-center justify-between gap-5 text-[11px] uppercase tracking-[0.32em] text-zinc-600">
-                            <div className="flex items-center gap-4">
-                                <span className="inline-block h-px w-12 bg-white/10" />
-                                <span>Más que un lavado, es cuidado real</span>
-                            </div>
-
-                            <div className="hidden items-center gap-4 xl:flex">
-                                <span className="text-[#ff2632]">///</span>
-                                <span>Detallamos tu pasión</span>
-                            </div>
-                        </div>
                     </div>
 
                     {/* DERECHA */}
@@ -1033,9 +964,72 @@ ${detalle.trim()}
                             `}</style>
                         </div>
 
-                        <div className="mt-8 flex items-center justify-center gap-4 text-[13px] uppercase tracking-[0.34em] text-zinc-600 xl:hidden">
-                            <span className="text-[#ff2632]">///</span>
-                            <span>Detallamos tu pasión</span>
+                        {/* BENEFICIOS Y SELLO DE MARCA — ahora debajo del formulario */}
+                        <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-3">
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-3 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center">
+                                    <ShieldCheck
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:h-[22px] sm:w-[22px]"
+                                    />
+                                    <div>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            Resultados
+                                        </p>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            profesionales
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-3 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center">
+                                    <Clock3
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:h-[22px] sm:w-[22px]"
+                                    />
+                                    <div>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            Atención
+                                        </p>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            por WhatsApp
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-3 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center">
+                                    <Sparkles
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:h-[22px] sm:w-[22px]"
+                                    />
+                                    <div>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            Tu auto en
+                                        </p>
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-[12px] lg:text-[13px]">
+                                            manos expertas
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-5 border-t border-white/[0.07] pt-4 sm:mt-6 sm:pt-5">
+                            <div className="flex flex-col items-center justify-between gap-3 text-center text-[10px] uppercase tracking-[0.22em] text-zinc-600 sm:flex-row sm:text-[11px] sm:tracking-[0.26em]">
+                                <div className="flex items-center gap-3">
+                                    <span className="hidden h-px w-8 bg-white/10 sm:inline-block" />
+                                    <span>Más que un lavado, es cuidado real</span>
+                                </div>
+
+                                <div className="flex items-center gap-3">
+                                    <span className="text-[#ff2632]">///</span>
+                                    <span>Detallamos tu pasión</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
