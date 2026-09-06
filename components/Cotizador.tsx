@@ -53,11 +53,73 @@ const categoriasServicios = [
     },
 ] as const;
 
-const vehiculos = ["Hatchback", "Sedán", "SUV", "Camioneta", "Otro"] as const;
+const vehiculos = [
+    "Hatchback",
+    "Sedán",
+    "SUV",
+    "Camioneta",
+    "Furgón",
+    "Jeep",
+    "Otro",
+] as const;
 
 const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
-    Hatchback: [],
-    "Sedán": [],
+    Hatchback: [
+        {
+            src: "/hatchback/hatchback frente.png",
+            alt: "Hatchback vista frontal",
+            label: "Frente",
+        },
+        {
+            src: "/hatchback/hatchback_lateral_derecho.png",
+            alt: "Hatchback vista frontal derecha",
+            label: "Frontal derecho",
+        },
+        {
+            src: "/hatchback/hatchback_lateral_izquierdo.png",
+            alt: "Hatchback vista frontal izquierda",
+            label: "Frontal izquierdo",
+        },
+        {
+            src: "/hatchback/hatchbac_trasero_derecho.png",
+            alt: "Hatchback vista trasera derecha",
+            label: "Trasero derecho",
+        },
+        {
+            src: "/hatchback/hatchback_trasero_izquierdo.png",
+            alt: "Hatchback vista trasera izquierda",
+            label: "Trasero izquierdo",
+        },
+    ],
+
+    "Sedán": [
+        {
+            src: "/sedan/sedan_frontal.png",
+            alt: "Sedán vista frontal",
+            label: "Frente",
+        },
+        {
+            src: "/sedan/sedan_frontal_derecho.png",
+            alt: "Sedán vista frontal derecha",
+            label: "Frontal derecho",
+        },
+        {
+            src: "/sedan/frente_lateral_izquierdo.png",
+            alt: "Sedán vista frontal izquierda",
+            label: "Frontal izquierdo",
+        },
+        {
+            src: "/sedan/trasero_derecho.png",
+            alt: "Sedán vista trasera derecha",
+            label: "Trasero derecho",
+        },
+        {
+            src: "/sedan/trasero_izquierdo.png",
+            alt: "Sedán vista trasera izquierda",
+            label: "Trasero izquierdo",
+        },
+    ],
+
     SUV: [
         {
             src: "/suv/suv_frente.png",
@@ -66,13 +128,13 @@ const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
         },
         {
             src: "/suv/lateral_derecho.png",
-            alt: "SUV vista lateral derecha",
-            label: "Lateral derecho",
+            alt: "SUV vista derecha",
+            label: "Frontal derecho",
         },
         {
             src: "/suv/suv_lateral.png",
-            alt: "SUV vista lateral",
-            label: "Lateral",
+            alt: "SUV vista diagonal",
+            label: "Frontal izquierdo",
         },
         {
             src: "/suv/suv_atras.png",
@@ -81,11 +143,110 @@ const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
         },
         {
             src: "/suv/lateral_izquierdo.png",
-            alt: "SUV vista lateral izquierda",
-            label: "Lateral izquierdo",
+            alt: "SUV vista trasera izquierda",
+            label: "Trasero izquierdo",
         },
     ],
-    Camioneta: [],
+
+    Camioneta: [
+        {
+            src: "/camioneta/frontal.png",
+            alt: "Camioneta vista frontal",
+            label: "Frente",
+        },
+        {
+            src: "/camioneta/frontal_derecho.png",
+            alt: "Camioneta vista frontal derecha",
+            label: "Frontal derecho",
+        },
+        {
+            src: "/camioneta/frontal_izquierdo.png",
+            alt: "Camioneta vista frontal izquierda",
+            label: "Frontal izquierdo",
+        },
+        {
+            src: "/camioneta/trasero.png",
+            alt: "Camioneta vista trasera",
+            label: "Atrás",
+        },
+        {
+            src: "/camioneta/trasero_derecho.png",
+            alt: "Camioneta vista trasera derecha",
+            label: "Trasero derecho",
+        },
+        {
+            src: "/camioneta/trasero_izquierdo.png",
+            alt: "Camioneta vista trasera izquierda",
+            label: "Trasero izquierdo",
+        },
+    ],
+
+    "Furgón": [
+        {
+            src: "/furgon/frontal.png",
+            alt: "Furgón vista frontal",
+            label: "Frente",
+        },
+        {
+            src: "/furgon/frontal_derecho.png",
+            alt: "Furgón vista frontal derecha",
+            label: "Frontal derecho",
+        },
+        {
+            src: "/furgon/frontal_izquierdo.png",
+            alt: "Furgón vista frontal izquierda",
+            label: "Frontal izquierdo",
+        },
+        {
+            src: "/furgon/trasero.png",
+            alt: "Furgón vista trasera",
+            label: "Atrás",
+        },
+        {
+            src: "/furgon/trasero_derecho.png",
+            alt: "Furgón vista trasera derecha",
+            label: "Trasero derecho",
+        },
+        {
+            src: "/furgon/furgon_izquierdo.png",
+            alt: "Furgón vista trasera izquierda",
+            label: "Trasero izquierdo",
+        },
+    ],
+
+    Jeep: [
+        {
+            src: "/jeep/frontal.png",
+            alt: "Jeep vista frontal",
+            label: "Frente",
+        },
+        {
+            src: "/jeep/frontal_derecho.png",
+            alt: "Jeep vista frontal derecha",
+            label: "Frontal derecho",
+        },
+        {
+            src: "/jeep/frontal_izquierdo.png",
+            alt: "Jeep vista frontal izquierda",
+            label: "Frontal izquierdo",
+        },
+        {
+            src: "/jeep/trasero.png",
+            alt: "Jeep vista trasera",
+            label: "Atrás",
+        },
+        {
+            src: "/jeep/trasero_derecho.png",
+            alt: "Jeep vista trasera derecha",
+            label: "Trasero derecho",
+        },
+        {
+            src: "/jeep/trasero_izquierdo.png",
+            alt: "Jeep vista trasera izquierda",
+            label: "Trasero izquierdo",
+        },
+    ],
+
     Otro: [],
 };
 
@@ -274,8 +435,8 @@ function VehicleHeroCarousel({
                         aria-label={`Ver ${vista.label}`}
                         onClick={() => setIndice(i)}
                         className={`rounded-full transition-all duration-300 ${i === indice
-                                ? "h-2 w-6 bg-[#ff2632] shadow-[0_0_14px_rgba(215,25,32,0.65)]"
-                                : "h-2 w-2 bg-zinc-700 hover:bg-zinc-500"
+                            ? "h-2 w-6 bg-[#ff2632] shadow-[0_0_14px_rgba(215,25,32,0.65)]"
+                            : "h-2 w-2 bg-zinc-700 hover:bg-zinc-500"
                             }`}
                     />
                 ))}
@@ -318,10 +479,10 @@ function ProgressSteps({ paso }: { paso: number }) {
                             <div className="flex flex-col items-center">
                                 <div
                                     className={`flex h-8 w-8 items-center justify-center rounded-full border text-[11px] font-bold transition sm:h-7 sm:w-7 sm:text-[10px] ${activo
-                                            ? "border-[#ff7d84] bg-[#ff2632] text-white shadow-[0_0_16px_rgba(215,25,32,0.55)]"
-                                            : completado
-                                                ? "border-[#ff2632] bg-[#d71920]/15 text-[#ff2632]"
-                                                : "border-white/10 bg-white/[0.03] text-zinc-600"
+                                        ? "border-[#ff7d84] bg-[#ff2632] text-white shadow-[0_0_16px_rgba(215,25,32,0.55)]"
+                                        : completado
+                                            ? "border-[#ff2632] bg-[#d71920]/15 text-[#ff2632]"
+                                            : "border-white/10 bg-white/[0.03] text-zinc-600"
                                         }`}
                                 >
                                     {completado ? <Check size={12} /> : item.numero}
@@ -337,8 +498,8 @@ function ProgressSteps({ paso }: { paso: number }) {
                             {index < pasoInfo.length - 1 && (
                                 <div
                                     className={`mx-2 h-px flex-1 transition ${paso > item.numero
-                                            ? "bg-[#ff2632]/60"
-                                            : "bg-white/10"
+                                        ? "bg-[#ff2632]/60"
+                                        : "bg-white/10"
                                         }`}
                                 />
                             )}
@@ -576,8 +737,8 @@ ${detalle.trim()}
                                                         type="button"
                                                         onClick={() => setVehiculo(item)}
                                                         className={`flex min-h-[82px] flex-col items-center justify-center gap-2 rounded-xl border px-3 py-3 transition ${seleccionado
-                                                                ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
-                                                                : "border-white/10 bg-white/[0.025] text-zinc-400"
+                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
+                                                            : "border-white/10 bg-white/[0.025] text-zinc-400"
                                                             }`}
                                                     >
                                                         <Car
@@ -695,8 +856,8 @@ ${detalle.trim()}
                                                                         toggleServicio(item)
                                                                     }
                                                                     className={`inline-flex min-h-[42px] items-center justify-center gap-1.5 rounded-xl border px-2.5 py-2 text-center text-[11px] transition sm:min-h-[36px] sm:justify-start sm:rounded-full sm:px-3 sm:text-[12px] ${seleccionado
-                                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
-                                                                            : "border-white/10 bg-black/45 text-zinc-400 hover:border-white/20 hover:text-white"
+                                                                        ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
+                                                                        : "border-white/10 bg-black/45 text-zinc-400 hover:border-white/20 hover:text-white"
                                                                         }`}
                                                                 >
                                                                     {seleccionado && (
