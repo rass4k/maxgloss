@@ -56,35 +56,35 @@ const categoriasServicios = [
 const vehiculos = ["Hatchback", "Sedán", "SUV", "Camioneta", "Otro"] as const;
 
 const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
-    Hatchback: [],
-    "Sedán": [],
-    SUV: [
+    Hatchback: [
         {
-            src: "/suv/suv_frente.png",
-            alt: "SUV vista frontal",
+            src: "/hatchback/hatchback_frente.png",
+            alt: "Hatchback vista frontal",
             label: "Frente",
         },
         {
-            src: "/suv/lateral_derecho.png",
-            alt: "SUV vista lateral derecha",
+            src: "/hatchback/lateral_derecho.png",
+            alt: "Hatchback vista lateral derecha",
             label: "Lateral derecho",
         },
         {
-            src: "/suv/suv_lateral.png",
-            alt: "SUV vista lateral",
+            src: "/hatchback/hatchback_lateral.png",
+            alt: "Hatchback vista lateral",
             label: "Lateral",
         },
         {
-            src: "/suv/suv_atras.png",
-            alt: "SUV vista trasera",
+            src: "/hatchback/hatchback de atras.png",
+            alt: "Hatchback vista trasera",
             label: "Atrás",
         },
         {
-            src: "/suv/lateral_izquierdo.png",
-            alt: "SUV vista lateral izquierda",
+            src: "/hatchback/lateral izquierdo.png",
+            alt: "Hatchback vista lateral izquierda",
             label: "Lateral izquierdo",
         },
     ],
+    "Sedán": [],
+    SUV: [],
     Camioneta: [],
     Otro: [],
 };
@@ -121,7 +121,7 @@ function VehicleHeroCarousel({
 
     if (!vehiculo || !vistas.length) {
         return (
-            <div className="relative mt-5 flex min-h-[400px] items-center justify-center overflow-hidden rounded-[28px] border border-white/[0.06] bg-white/[0.015] sm:min-h-[470px] xl:mt-6 xl:min-h-[540px]">
+            <div className="relative mt-3 flex min-h-[330px] items-center justify-center overflow-hidden rounded-[24px] border border-white/[0.06] bg-white/[0.015] sm:mt-5 sm:min-h-[470px] sm:rounded-[28px] xl:mt-6 xl:min-h-[540px]">
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(215,25,32,0.10),transparent_55%)]" />
                 <div className="relative text-center">
                     <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
@@ -150,23 +150,23 @@ function VehicleHeroCarousel({
 
     return (
         <div
-            className="relative mt-5 min-h-[400px] overflow-visible sm:min-h-[470px] xl:mt-6 xl:min-h-[540px]"
+            className="relative mt-3 min-h-[330px] overflow-hidden sm:mt-5 sm:min-h-[470px] sm:overflow-visible xl:mt-6 xl:min-h-[540px]"
             onMouseEnter={() => setPausado(true)}
             onMouseLeave={() => setPausado(false)}
         >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute left-1/2 top-[50%] h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d71920]/10 sm:h-[500px] sm:w-[500px]" />
-                <div className="absolute left-[58%] top-[48%] h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d71920]/[0.07]" />
-                <div className="absolute left-1/2 top-[52%] h-[330px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d71920]/10 blur-[120px]" />
-                <div className="absolute bottom-[65px] left-1/2 h-[72px] w-[78%] -translate-x-1/2 rounded-[50%] border border-[#ff2632]/35 shadow-[0_0_35px_rgba(215,25,32,0.08)]" />
-                <div className="absolute bottom-[100px] left-1/2 h-px w-[68%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#ff2632]/50 to-transparent" />
+                <div className="absolute left-1/2 top-[48%] h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d71920]/10 sm:top-[50%] sm:h-[500px] sm:w-[500px]" />
+                <div className="absolute left-[58%] top-[48%] h-[360px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d71920]/[0.07] sm:h-[520px] sm:w-[520px]" />
+                <div className="absolute left-1/2 top-[50%] h-[220px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d71920]/10 blur-[90px] sm:top-[52%] sm:h-[330px] sm:w-[520px] sm:blur-[120px]" />
+                <div className="absolute bottom-[54px] left-1/2 h-[44px] w-[76%] -translate-x-1/2 rounded-[50%] border border-[#ff2632]/35 shadow-[0_0_28px_rgba(215,25,32,0.08)] sm:bottom-[65px] sm:h-[72px] sm:w-[78%]" />
+                <div className="absolute bottom-[75px] left-1/2 h-px w-[66%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#ff2632]/50 to-transparent sm:bottom-[100px] sm:w-[68%]" />
             </div>
 
             <button
                 type="button"
                 onClick={anterior}
                 aria-label={`Ver ${previo.label}`}
-                className="group absolute left-[-10%] top-[49%] z-[2] hidden h-[210px] w-[290px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] lg:block xl:left-[-12%]"
+                className="group absolute left-[-24%] top-[45%] z-[2] block h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:left-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:left-[-10%] lg:h-[210px] lg:w-[290px] xl:left-[-12%]"
             >
                 <img
                     src={previo.src}
@@ -181,7 +181,7 @@ function VehicleHeroCarousel({
                 type="button"
                 onClick={siguiente}
                 aria-label={`Ver ${siguienteVista.label}`}
-                className="group absolute right-[-11%] top-[49%] z-[2] hidden h-[210px] w-[290px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] lg:block xl:right-[-13%]"
+                className="group absolute right-[-24%] top-[45%] z-[2] block h-[135px] w-[170px] -translate-y-1/2 cursor-pointer opacity-[0.14] transition duration-500 hover:opacity-[0.26] sm:right-[-15%] sm:top-[49%] sm:h-[190px] sm:w-[250px] lg:right-[-11%] lg:h-[210px] lg:w-[290px] xl:right-[-13%]"
             >
                 <img
                     src={siguienteVista.src}
@@ -192,12 +192,12 @@ function VehicleHeroCarousel({
                 />
             </button>
 
-            <div className="absolute inset-x-[3%] top-[45%] z-10 -translate-y-1/2 sm:inset-x-[6%] xl:inset-x-[1%]">
+            <div className="absolute inset-x-[4%] top-[42%] z-10 -translate-y-1/2 sm:inset-x-[6%] sm:top-[45%] xl:inset-x-[1%]">
                 <img
                     key={actual.src}
                     src={actual.src}
                     alt={actual.alt}
-                    className="hero-car-fade mx-auto h-[300px] w-full max-w-[760px] object-contain drop-shadow-[0_0_28px_rgba(255,255,255,0.10)] sm:h-[370px] xl:h-[430px]"
+                    className="hero-car-fade mx-auto h-[235px] w-full max-w-[440px] object-contain drop-shadow-[0_0_24px_rgba(255,255,255,0.10)] min-[390px]:h-[250px] sm:h-[370px] sm:max-w-[760px] xl:h-[430px]"
                     style={{ filter: "brightness(0) invert(1)" }}
                     draggable={false}
                 />
@@ -227,7 +227,7 @@ function VehicleHeroCarousel({
             </div>
             <div className="absolute right-[35%] top-[63%] z-20 hidden h-3.5 w-3.5 rounded-full border border-[#ff8087] bg-[#ff2632] shadow-[0_0_24px_rgba(215,25,32,0.95)] xl:block" />
 
-            <div className="absolute bottom-[8px] left-1/2 z-30 flex w-[86%] max-w-[610px] -translate-x-1/2 items-center justify-center gap-4 sm:gap-6">
+            <div className="absolute bottom-[16px] left-1/2 z-30 flex w-[90%] max-w-[610px] -translate-x-1/2 items-center justify-center gap-3 sm:bottom-[8px] sm:w-[86%] sm:gap-6">
                 <button
                     type="button"
                     onClick={anterior}
@@ -243,10 +243,10 @@ function VehicleHeroCarousel({
                 </button>
 
                 <div className="shrink-0 text-center">
-                    <p className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.38em] text-zinc-400">
+                    <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.28em] text-zinc-400 sm:text-[11px] sm:tracking-[0.38em]">
                         Vista rotativa
                     </p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.20em] text-zinc-600">
+                    <p className="mt-1 text-[9px] uppercase tracking-[0.16em] text-zinc-600 sm:text-[10px] sm:tracking-[0.20em]">
                         {actual.label}
                     </p>
                 </div>
@@ -266,7 +266,7 @@ function VehicleHeroCarousel({
                 </button>
             </div>
 
-            <div className="absolute bottom-[-20px] left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
+            <div className="absolute bottom-[-6px] left-1/2 z-30 flex -translate-x-1/2 items-center gap-1.5 sm:bottom-[-20px] sm:gap-2">
                 {vistas.map((vista, i) => (
                     <button
                         key={vista.src}
@@ -303,7 +303,7 @@ function VehicleHeroCarousel({
 
 function ProgressSteps({ paso }: { paso: number }) {
     return (
-        <div className="mt-5">
+        <div className="mt-0 sm:mt-5">
             <div className="flex items-center">
                 {pasoInfo.map((item, index) => {
                     const activo = paso === item.numero;
@@ -317,7 +317,7 @@ function ProgressSteps({ paso }: { paso: number }) {
                         >
                             <div className="flex flex-col items-center">
                                 <div
-                                    className={`flex h-7 w-7 items-center justify-center rounded-full border text-[10px] font-bold transition ${activo
+                                    className={`flex h-8 w-8 items-center justify-center rounded-full border text-[11px] font-bold transition sm:h-7 sm:w-7 sm:text-[10px] ${activo
                                             ? "border-[#ff7d84] bg-[#ff2632] text-white shadow-[0_0_16px_rgba(215,25,32,0.55)]"
                                             : completado
                                                 ? "border-[#ff2632] bg-[#d71920]/15 text-[#ff2632]"
@@ -327,7 +327,7 @@ function ProgressSteps({ paso }: { paso: number }) {
                                     {completado ? <Check size={12} /> : item.numero}
                                 </div>
                                 <span
-                                    className={`mt-1.5 hidden text-[9px] font-semibold uppercase tracking-[0.12em] sm:block ${activo ? "text-zinc-300" : "text-zinc-600"
+                                    className={`mt-1.5 block text-[9px] font-semibold uppercase tracking-[0.08em] min-[390px]:tracking-[0.12em] ${activo ? "text-zinc-300" : "text-zinc-600"
                                         }`}
                                 >
                                     {item.titulo}
@@ -430,81 +430,81 @@ ${detalle.trim()}
     return (
         <section
             id="cotizar"
-            className="relative overflow-hidden border-t border-white/10 bg-[#070708] py-14 text-white"
+            className="relative overflow-hidden border-t border-white/10 bg-[#070708] py-10 text-white sm:py-12 xl:py-14"
         >
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_22%_72%,rgba(215,25,32,0.13),transparent_26%),radial-gradient(circle_at_60%_25%,rgba(215,25,32,0.07),transparent_22%)]" />
             <div className="pointer-events-none absolute left-[36%] top-[12%] hidden h-[620px] w-[620px] rounded-full border border-[#d71920]/[0.07] xl:block" />
 
-            <div className="relative mx-auto max-w-[1680px] px-5 lg:px-8">
+            <div className="relative mx-auto max-w-[1680px] px-4 sm:px-5 lg:px-8">
                 <div className="grid gap-8 xl:grid-cols-[1.16fr_0.84fr] xl:items-start">
                     {/* IZQUIERDA */}
                     <div className="min-w-0 xl:pr-3">
-                        <div className="mb-5 flex items-center gap-4">
-                            <span className="h-[2px] w-12 bg-[#ff2632]" />
-                            <p className="text-xs font-bold uppercase tracking-[0.36em] text-[#ff2632]">
+                        <div className="mb-4 flex items-center gap-3 sm:mb-5 sm:gap-4">
+                            <span className="h-[2px] w-8 bg-[#ff2632] sm:w-12" />
+                            <p className="text-[10px] font-bold uppercase tracking-[0.30em] text-[#ff2632] sm:text-xs sm:tracking-[0.36em]">
                                 Cotiza tu vehículo
                             </p>
                         </div>
 
-                        <h2 className="max-w-[680px] text-4xl font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-5xl lg:text-[64px] xl:text-[72px]">
+                        <h2 className="max-w-[680px] text-[38px] font-black uppercase leading-[0.90] tracking-[-0.045em] text-white min-[390px]:text-[42px] sm:text-5xl lg:text-[64px] xl:text-[72px]">
                             ¿Qué necesita
                             <br />
                             <span className="text-zinc-500">tu auto?</span>
                         </h2>
 
-                        <p className="mt-5 max-w-[620px] text-base leading-7 text-zinc-400 lg:text-[17px]">
+                        <p className="mt-4 max-w-[620px] text-[14px] leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7 lg:text-[17px]">
                             Selecciona tu vehículo, elige los servicios y envía
                             todos los detalles directamente por WhatsApp.
                         </p>
 
                         <VehicleHeroCarousel vehiculo={vehiculo} vistas={vistas} />
 
-                        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                            <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-4">
-                                <div className="flex items-start gap-3">
+                        <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:gap-4">
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
                                     <ShieldCheck
-                                        size={22}
-                                        className="mt-0.5 shrink-0 text-[#ff2632]"
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
                                     />
                                     <div>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             Resultados
                                         </p>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             profesionales
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-4">
-                                <div className="flex items-start gap-3">
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
                                     <Clock3
-                                        size={22}
-                                        className="mt-0.5 shrink-0 text-[#ff2632]"
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
                                     />
                                     <div>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             Atención
                                         </p>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             por WhatsApp
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-4">
-                                <div className="flex items-start gap-3">
+                            <div className="rounded-xl border border-white/8 bg-white/[0.02] px-2 py-3 sm:rounded-2xl sm:px-4 sm:py-4">
+                                <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-3 sm:text-left">
                                     <Sparkles
-                                        size={22}
-                                        className="mt-0.5 shrink-0 text-[#ff2632]"
+                                        size={20}
+                                        className="shrink-0 text-[#ff2632] sm:mt-0.5 sm:h-[22px] sm:w-[22px]"
                                     />
                                     <div>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             Tu auto en
                                         </p>
-                                        <p className="text-sm text-zinc-300 lg:text-[15px]">
+                                        <p className="text-[10px] leading-[1.25] text-zinc-300 min-[390px]:text-[11px] sm:text-sm lg:text-[15px]">
                                             manos expertas
                                         </p>
                                     </div>
@@ -526,10 +526,10 @@ ${detalle.trim()}
                     </div>
 
                     {/* DERECHA */}
-                    <div className="xl:pl-2 xl:pt-[205px]">
-                        <div className="rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,14,18,0.96),rgba(9,9,12,0.98))] p-4 shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:p-5 lg:p-6">
+                    <div className="mt-7 xl:mt-0 xl:pl-2 xl:pt-[205px]">
+                        <div className="rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(14,14,18,0.96),rgba(9,9,12,0.98))] p-4 shadow-[0_24px_60px_rgba(0,0,0,0.40)] sm:rounded-[28px] sm:p-5 lg:p-6">
                             {/* HEADER */}
-                            <div className="flex items-start justify-between gap-3">
+                            <div className="hidden items-start justify-between gap-3 sm:flex">
                                 <div className="flex items-center gap-3">
                                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#d71920]/12">
                                         <Car size={20} className="text-[#ff2632]" />
@@ -549,7 +549,7 @@ ${detalle.trim()}
                             <ProgressSteps paso={paso} />
 
                             {/* CONTENIDO POR PASOS */}
-                            <div className="step-fade mt-5 border-t border-white/[0.08] pt-5">
+                            <div className="step-fade mt-4 border-t border-white/[0.08] pt-4 sm:mt-5 sm:pt-5">
                                 {paso === 1 && (
                                     <div>
                                         <div className="mb-4">
@@ -559,48 +559,82 @@ ${detalle.trim()}
                                             <h4 className="mt-1 text-lg font-bold text-white">
                                                 ¿Qué vehículo tienes?
                                             </h4>
-                                            <p className="mt-1 text-sm leading-6 text-zinc-500">
+                                            <p className="mt-1 text-[13px] leading-5 text-zinc-500 sm:text-sm sm:leading-6">
                                                 Selecciona el tipo de vehículo para adaptar la
                                                 cotización.
                                             </p>
                                         </div>
 
-                                        <label
-                                            htmlFor="vehiculo"
-                                            className="text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500"
-                                        >
-                                            Tipo de vehículo
-                                        </label>
+                                        {/* MOBILE: selector visual táctil */}
+                                        <div className="grid grid-cols-2 gap-2 sm:hidden">
+                                            {vehiculos.map((item) => {
+                                                const seleccionado = vehiculo === item;
 
-                                        <select
-                                            id="vehiculo"
-                                            value={vehiculo}
-                                            onChange={(e) => setVehiculo(e.target.value)}
-                                            className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-black/70 px-4 text-[14px] text-white outline-none transition focus:border-[#d71920]"
-                                        >
-                                            {vehiculos.map((item) => (
-                                                <option key={item} value={item}>
-                                                    {item}
-                                                </option>
-                                            ))}
-                                        </select>
+                                                return (
+                                                    <button
+                                                        key={item}
+                                                        type="button"
+                                                        onClick={() => setVehiculo(item)}
+                                                        className={`flex min-h-[82px] flex-col items-center justify-center gap-2 rounded-xl border px-3 py-3 transition ${seleccionado
+                                                                ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
+                                                                : "border-white/10 bg-white/[0.025] text-zinc-400"
+                                                            }`}
+                                                    >
+                                                        <Car
+                                                            size={22}
+                                                            className={
+                                                                seleccionado
+                                                                    ? "text-[#ff2632]"
+                                                                    : "text-zinc-500"
+                                                            }
+                                                        />
+                                                        <span className="text-[12px] font-semibold">
+                                                            {item}
+                                                        </span>
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
 
-                                        <div className="mt-4 rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3">
-                                            <div className="flex items-center gap-3">
-                                                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d71920]/10">
-                                                    <Car
-                                                        size={17}
-                                                        className="text-[#ff2632]"
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <p className="text-sm font-semibold text-white">
-                                                        {vehiculo}
-                                                    </p>
-                                                    <p className="text-xs text-zinc-500">
-                                                        La vista de la izquierda cambia según tu
-                                                        selección.
-                                                    </p>
+                                        {/* TABLET / DESKTOP: select compacto */}
+                                        <div className="hidden sm:block">
+                                            <label
+                                                htmlFor="vehiculo"
+                                                className="text-[10px] font-bold uppercase tracking-[0.24em] text-zinc-500"
+                                            >
+                                                Tipo de vehículo
+                                            </label>
+
+                                            <select
+                                                id="vehiculo"
+                                                value={vehiculo}
+                                                onChange={(e) => setVehiculo(e.target.value)}
+                                                className="mt-2 h-11 w-full rounded-xl border border-white/10 bg-black/70 px-4 text-[14px] text-white outline-none transition focus:border-[#d71920]"
+                                            >
+                                                {vehiculos.map((item) => (
+                                                    <option key={item} value={item}>
+                                                        {item}
+                                                    </option>
+                                                ))}
+                                            </select>
+
+                                            <div className="mt-4 rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d71920]/10">
+                                                        <Car
+                                                            size={17}
+                                                            className="text-[#ff2632]"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-sm font-semibold text-white">
+                                                            {vehiculo}
+                                                        </p>
+                                                        <p className="text-xs text-zinc-500">
+                                                            La vista de la izquierda cambia según tu
+                                                            selección.
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -629,7 +663,7 @@ ${detalle.trim()}
                                                 <h4 className="mt-1 text-lg font-bold text-white">
                                                     ¿Qué servicios necesitas?
                                                 </h4>
-                                                <p className="mt-1 text-sm leading-6 text-zinc-500">
+                                                <p className="mt-1 text-[13px] leading-5 text-zinc-500 sm:text-sm sm:leading-6">
                                                     Puedes seleccionar más de uno.
                                                 </p>
                                             </div>
@@ -641,14 +675,14 @@ ${detalle.trim()}
                                             )}
                                         </div>
 
-                                        <div className="grid gap-x-5 gap-y-5 lg:grid-cols-2">
+                                        <div className="grid gap-x-5 gap-y-5 sm:grid-cols-2">
                                             {categoriasServicios.map((grupo) => (
                                                 <div key={grupo.categoria}>
                                                     <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-zinc-600">
                                                         {grupo.categoria}
                                                     </p>
 
-                                                    <div className="flex flex-wrap gap-2">
+                                                    <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
                                                         {grupo.servicios.map((item) => {
                                                             const seleccionado =
                                                                 serviciosSeleccionados.includes(item);
@@ -660,7 +694,7 @@ ${detalle.trim()}
                                                                     onClick={() =>
                                                                         toggleServicio(item)
                                                                     }
-                                                                    className={`inline-flex min-h-[36px] items-center gap-1.5 rounded-full border px-3 py-2 text-[12px] transition ${seleccionado
+                                                                    className={`inline-flex min-h-[42px] items-center justify-center gap-1.5 rounded-xl border px-2.5 py-2 text-center text-[11px] transition sm:min-h-[36px] sm:justify-start sm:rounded-full sm:px-3 sm:text-[12px] ${seleccionado
                                                                             ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
                                                                             : "border-white/10 bg-black/45 text-zinc-400 hover:border-white/20 hover:text-white"
                                                                         }`}
@@ -680,7 +714,7 @@ ${detalle.trim()}
                                             ))}
                                         </div>
 
-                                        <div className="mt-5 grid grid-cols-[0.42fr_0.58fr] gap-3">
+                                        <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-[0.42fr_0.58fr] sm:gap-3">
                                             <button
                                                 type="button"
                                                 onClick={volver}
@@ -714,7 +748,7 @@ ${detalle.trim()}
                                             <h4 className="mt-1 text-lg font-bold text-white">
                                                 Revisa y envía
                                             </h4>
-                                            <p className="mt-1 text-sm leading-6 text-zinc-500">
+                                            <p className="mt-1 text-[13px] leading-5 text-zinc-500 sm:text-sm sm:leading-6">
                                                 Estos datos se enviarán directamente por WhatsApp.
                                             </p>
                                         </div>
@@ -786,7 +820,7 @@ ${detalle.trim()}
                                             />
                                         </div>
 
-                                        <div className="mt-5 grid grid-cols-[0.34fr_0.66fr] gap-3">
+                                        <div className="mt-5 grid grid-cols-[0.38fr_0.62fr] gap-2 sm:grid-cols-[0.34fr_0.66fr] sm:gap-3">
                                             <button
                                                 type="button"
                                                 onClick={volver}
