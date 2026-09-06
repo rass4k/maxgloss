@@ -645,7 +645,7 @@ ${detalle.trim()}
                             <div className="step-fade mt-4 border-t border-white/[0.08] pt-4 sm:mt-5 sm:pt-5">
                                 {paso === 1 && (
                                     <div>
-                                        <div className="mb-4">
+                                        <div className="mb-3 sm:mb-4">
                                             <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#ff2632]">
                                                 Paso 1
                                             </p>
@@ -658,8 +658,8 @@ ${detalle.trim()}
                                             </p>
                                         </div>
 
-                                        {/* MOBILE: selector visual táctil */}
-                                        <div className="grid grid-cols-2 gap-2 sm:hidden">
+                                        {/* MOBILE: selector compacto para ahorrar altura */}
+                                        <div className="grid grid-cols-2 gap-2 min-[390px]:grid-cols-3 sm:hidden">
                                             {vehiculos.map((item) => {
                                                 const seleccionado = vehiculo === item;
 
@@ -668,20 +668,20 @@ ${detalle.trim()}
                                                         key={item}
                                                         type="button"
                                                         onClick={() => setVehiculo(item)}
-                                                        className={`flex min-h-[82px] flex-col items-center justify-center gap-2 rounded-xl border px-3 py-3 transition ${seleccionado
-                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.10)]"
+                                                        aria-pressed={seleccionado}
+                                                        className={`flex min-h-[60px] items-center justify-center gap-2 rounded-xl border px-2.5 py-2 transition ${seleccionado
+                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white shadow-[0_0_18px_rgba(215,25,32,0.12)]"
                                                             : "border-white/10 bg-white/[0.025] text-zinc-400"
                                                             }`}
                                                     >
                                                         <Car
-                                                            size={22}
-                                                            className={
-                                                                seleccionado
-                                                                    ? "text-[#ff2632]"
-                                                                    : "text-zinc-500"
-                                                            }
+                                                            size={17}
+                                                            className={`shrink-0 ${seleccionado
+                                                                ? "text-[#ff2632]"
+                                                                : "text-zinc-500"
+                                                                }`}
                                                         />
-                                                        <span className="text-[12px] font-semibold">
+                                                        <span className="whitespace-nowrap text-[11px] font-semibold min-[390px]:text-[10px] min-[430px]:text-[11px]">
                                                             {item}
                                                         </span>
                                                     </button>
@@ -735,7 +735,7 @@ ${detalle.trim()}
                                         <button
                                             type="button"
                                             onClick={avanzar}
-                                            className="group mt-5 flex h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[linear-gradient(180deg,#ff2935,#da111c)] px-5 text-[14px] font-bold text-white shadow-[0_10px_24px_rgba(215,25,32,0.24)] transition hover:brightness-110"
+                                            className="group mt-4 flex h-[46px] w-full items-center justify-center gap-2 rounded-xl bg-[linear-gradient(180deg,#ff2935,#da111c)] px-5 text-[14px] font-bold text-white shadow-[0_10px_24px_rgba(215,25,32,0.24)] transition hover:brightness-110"
                                         >
                                             Continuar
                                             <ArrowRight
