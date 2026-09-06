@@ -95,54 +95,6 @@ function Comparador({
     );
 }
 
-function ResultadoOpticos() {
-    return (
-        <article className="overflow-hidden rounded-xl border border-white/10 bg-[#0d0d0f]">
-            {/* FOTOS REALES: no se superponen porque tienen encuadres distintos */}
-            <div className="grid bg-black sm:grid-cols-2">
-                <div className="relative aspect-[4/3] overflow-hidden border-b border-white/10 sm:border-b-0 sm:border-r">
-                    <Image
-                        src="/focos_antes.png"
-                        alt="Óptico antes del pulido"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
-                    <span className="absolute left-4 top-4 z-10 rounded bg-black/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur">
-                        Antes
-                    </span>
-                </div>
-
-                <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                        src="/focos_limpios.png"
-                        alt="Óptico después del pulido"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
-                    <span className="absolute right-4 top-4 z-10 rounded bg-[#d71920] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
-                        Después
-                    </span>
-                </div>
-            </div>
-
-            <div className="p-6 sm:p-7">
-                <div className="mb-4 h-[2px] w-8 bg-[#d71920]" />
-
-                <h3 className="text-xl font-black uppercase tracking-tight text-white">
-                    Pulido de ópticos
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-zinc-400">
-                    Ópticos opacos y deteriorados recuperan claridad, transparencia y
-                    una apariencia mucho más limpia y cuidada.
-                </p>
-            </div>
-        </article>
-    );
-}
-
 export default function AntesDespues() {
     return (
         <section
@@ -167,18 +119,24 @@ export default function AntesDespues() {
                         <h2 className="max-w-2xl text-4xl font-black uppercase leading-[0.95] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
                             Cada detalle
                             <br />
-                            <span className="text-zinc-500">marca la diferencia.</span>
+                            <span className="text-zinc-500">
+                                marca la diferencia.
+                            </span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-lg text-sm leading-7 text-zinc-400">
-                            Desde rincones difíciles hasta ruedas y ópticos, mostramos
-                            resultados reales donde el cambio se puede ver de cerca.
+                            Desde rincones difíciles hasta ruedas y ópticos,
+                            mostramos resultados reales donde el cambio se puede
+                            ver de cerca.
                         </p>
 
                         <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
-                            <MoveHorizontal size={16} className="text-[#d71920]" />
+                            <MoveHorizontal
+                                size={16}
+                                className="text-[#d71920]"
+                            />
                             Desliza para comparar
                         </div>
                     </div>
@@ -201,9 +159,14 @@ export default function AntesDespues() {
                     />
                 </div>
 
-                {/* TERCER CASO: ÓPTICOS — usa las dos fotos reales lado a lado */}
-                <div className="mt-5">
-                    <ResultadoOpticos />
+                {/* TERCER CASO: ÓPTICOS — ahora con slider también */}
+                <div className="mt-5 lg:max-w-[calc(50%-10px)]">
+                    <Comparador
+                        antes="/focos_antes.png"
+                        despues="/focos_limpios.png"
+                        titulo="Pulido de ópticos"
+                        descripcion="Ópticos opacos y deteriorados recuperan claridad, transparencia y una apariencia mucho más limpia y cuidada."
+                    />
                 </div>
 
                 {/* FRASE FINAL */}
@@ -214,7 +177,8 @@ export default function AntesDespues() {
                         </p>
 
                         <p className="mt-1 text-sm text-zinc-500">
-                            Es transformar cada superficie con atención en los detalles.
+                            Es transformar cada superficie con atención en los
+                            detalles.
                         </p>
                     </div>
 
