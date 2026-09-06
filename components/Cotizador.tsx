@@ -618,10 +618,8 @@ ${detalle.trim()}
 
 ` : ""}¿Me pueden indicar valor y disponibilidad?`;
 
-        // Reemplaza por el número real de Max Gloss:
-        // Formato: código de país + número, SIN +, espacios ni guiones.
-        // Ejemplo Chile: 56912345678
-        const telefono = "";
+
+        const telefono = "56942002181";
 
         const url = telefono
             ? `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`
@@ -942,8 +940,8 @@ ${detalle.trim()}
                                                     onClick={() => setModalidad("domicilio")}
                                                     aria-pressed={modalidad === "domicilio"}
                                                     className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${modalidad === "domicilio"
-                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white"
-                                                            : "border-white/10 bg-white/[0.025] text-zinc-500"
+                                                        ? "border-[#ff2632] bg-[#d71920]/12 text-white"
+                                                        : "border-white/10 bg-white/[0.025] text-zinc-500"
                                                         }`}
                                                 >
                                                     A domicilio
@@ -954,8 +952,8 @@ ${detalle.trim()}
                                                     onClick={() => setModalidad("coordinar")}
                                                     aria-pressed={modalidad === "coordinar"}
                                                     className={`min-h-[48px] rounded-xl border px-3 py-2 text-[12px] font-semibold transition ${modalidad === "coordinar"
-                                                            ? "border-[#ff2632] bg-[#d71920]/12 text-white"
-                                                            : "border-white/10 bg-white/[0.025] text-zinc-500"
+                                                        ? "border-[#ff2632] bg-[#d71920]/12 text-white"
+                                                        : "border-white/10 bg-white/[0.025] text-zinc-500"
                                                         }`}
                                                 >
                                                     Coordinar
