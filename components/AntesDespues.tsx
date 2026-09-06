@@ -60,7 +60,6 @@ function Comparador({
                     className="pointer-events-none absolute bottom-0 top-0 z-20 w-[2px] bg-white"
                     style={{ left: `${posicion}%` }}
                 >
-                    {/* CONTROL VISUAL */}
                     <div className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-[#090909] shadow-xl">
                         <MoveHorizontal size={18} />
                     </div>
@@ -77,7 +76,6 @@ function Comparador({
                     className="absolute inset-0 z-30 h-full w-full cursor-ew-resize opacity-0"
                 />
 
-                {/* OSCURECIMIENTO INFERIOR */}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-28 bg-gradient-to-t from-black/65 to-transparent" />
             </div>
 
@@ -91,6 +89,54 @@ function Comparador({
 
                 <p className="mt-3 text-sm leading-6 text-zinc-400">
                     {descripcion}
+                </p>
+            </div>
+        </article>
+    );
+}
+
+function ResultadoOpticos() {
+    return (
+        <article className="overflow-hidden rounded-xl border border-white/10 bg-[#0d0d0f]">
+            {/* FOTOS REALES: no se superponen porque tienen encuadres distintos */}
+            <div className="grid bg-black sm:grid-cols-2">
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-white/10 sm:border-b-0 sm:border-r">
+                    <Image
+                        src="/focos_antes.png"
+                        alt="Óptico antes del pulido"
+                        fill
+                        className="object-cover"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
+                    <span className="absolute left-4 top-4 z-10 rounded bg-black/80 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur">
+                        Antes
+                    </span>
+                </div>
+
+                <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                        src="/focos_limpios.png"
+                        alt="Óptico después del pulido"
+                        fill
+                        className="object-cover"
+                    />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
+                    <span className="absolute right-4 top-4 z-10 rounded bg-[#d71920] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                        Después
+                    </span>
+                </div>
+            </div>
+
+            <div className="p-6 sm:p-7">
+                <div className="mb-4 h-[2px] w-8 bg-[#d71920]" />
+
+                <h3 className="text-xl font-black uppercase tracking-tight text-white">
+                    Pulido de ópticos
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-zinc-400">
+                    Ópticos opacos y deteriorados recuperan claridad, transparencia y
+                    una apariencia mucho más limpia y cuidada.
                 </p>
             </div>
         </article>
@@ -119,17 +165,16 @@ export default function AntesDespues() {
                         </div>
 
                         <h2 className="max-w-2xl text-4xl font-black uppercase leading-[0.95] tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
-                            Llegamos a
+                            Cada detalle
                             <br />
-                            <span className="text-zinc-500">cada rincón.</span>
+                            <span className="text-zinc-500">marca la diferencia.</span>
                         </h2>
                     </div>
 
                     <div>
                         <p className="max-w-lg text-sm leading-7 text-zinc-400">
-                            Un buen detailing no se trata solamente de que el vehículo
-                            se vea limpio desde lejos. El resultado está en esos espacios
-                            que normalmente pasan desapercibidos.
+                            Desde rincones difíciles hasta ruedas y ópticos, mostramos
+                            resultados reales donde el cambio se puede ver de cerca.
                         </p>
 
                         <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
@@ -139,21 +184,26 @@ export default function AntesDespues() {
                     </div>
                 </div>
 
-                {/* COMPARADORES */}
+                {/* 3 CASOS DE ANTES & DESPUÉS */}
                 <div className="grid gap-5 lg:grid-cols-2">
                     <Comparador
-                        antes="/esquinas_limpias.png"
-                        despues="/esquinas_sucias.png"
+                        antes="/esquinas_sucias.png"
+                        despues="/esquinas_limpias.png"
                         titulo="Donde otros no llegan"
                         descripcion="Suciedad acumulada alrededor de molduras, cámaras, uniones y espacios reducidos. El detalle también está ahí."
                     />
 
                     <Comparador
-                        antes="/rueda_limpia.png"
-                        despues="/rueda_sucia.png"
+                        antes="/rueda_sucia.png"
+                        despues="/rueda_limpia.png"
                         titulo="Cada superficie cuenta"
                         descripcion="Llantas, neumáticos y zonas expuestas recuperan una apariencia limpia y cuidada con atención en cada terminación."
                     />
+                </div>
+
+                {/* TERCER CASO: ÓPTICOS — usa las dos fotos reales lado a lado */}
+                <div className="mt-5">
+                    <ResultadoOpticos />
                 </div>
 
                 {/* FRASE FINAL */}
@@ -164,7 +214,7 @@ export default function AntesDespues() {
                         </p>
 
                         <p className="mt-1 text-sm text-zinc-500">
-                            Es prestar atención a lo que normalmente nadie mira.
+                            Es transformar cada superficie con atención en los detalles.
                         </p>
                     </div>
 
