@@ -162,8 +162,8 @@ export default function AntesDespues() {
                 {/* TERCER CASO: ÓPTICOS — ahora con slider también */}
                 <div className="mt-5 lg:max-w-[calc(50%-10px)]">
                     <Comparador
-                        antes="/focos_antes.png"
-                        despues="/focos_limpios.png"
+                        antes="/focos_limpios.png"
+                        despues="/focos_antes.png"
                         titulo="Pulido de ópticos"
                         descripcion="Ópticos opacos y deteriorados recuperan claridad, transparencia y una apariencia mucho más limpia y cuidada."
                     />
