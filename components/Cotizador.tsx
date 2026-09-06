@@ -56,35 +56,35 @@ const categoriasServicios = [
 const vehiculos = ["Hatchback", "Sedán", "SUV", "Camioneta", "Otro"] as const;
 
 const vistasPorVehiculo: Record<string, VistaVehiculo[]> = {
-    Hatchback: [
+    Hatchback: [],
+    "Sedán": [],
+    SUV: [
         {
-            src: "/hatchback/hatchback_frente.png",
-            alt: "Hatchback vista frontal",
+            src: "/suv/suv_frente.png",
+            alt: "SUV vista frontal",
             label: "Frente",
         },
         {
-            src: "/hatchback/lateral_derecho.png",
-            alt: "Hatchback vista lateral derecha",
+            src: "/suv/lateral_derecho.png",
+            alt: "SUV vista lateral derecha",
             label: "Lateral derecho",
         },
         {
-            src: "/hatchback/hatchback_lateral.png",
-            alt: "Hatchback vista lateral",
+            src: "/suv/suv_lateral.png",
+            alt: "SUV vista lateral",
             label: "Lateral",
         },
         {
-            src: "/hatchback/hatchback de atras.png",
-            alt: "Hatchback vista trasera",
+            src: "/suv/suv_atras.png",
+            alt: "SUV vista trasera",
             label: "Atrás",
         },
         {
-            src: "/hatchback/lateral izquierdo.png",
-            alt: "Hatchback vista lateral izquierda",
+            src: "/suv/lateral_izquierdo.png",
+            alt: "SUV vista lateral izquierda",
             label: "Lateral izquierdo",
         },
     ],
-    "Sedán": [],
-    SUV: [],
     Camioneta: [],
     Otro: [],
 };
@@ -356,7 +356,7 @@ function ProgressSteps({ paso }: { paso: number }) {
 
 export default function Cotizador() {
     const [paso, setPaso] = useState(1);
-    const [vehiculo, setVehiculo] = useState("Hatchback");
+    const [vehiculo, setVehiculo] = useState("SUV");
     const [serviciosSeleccionados, setServiciosSeleccionados] = useState<string[]>(
         []
     );
